@@ -1,0 +1,66 @@
+1. Start with maze (text file?)
+
+2. Online resources
+to animate: timer to animate back and forth between 3 legged and 4 legged versions
+timer.py: for animation
+timer dual for flashing ghosts of death animation... each frame type has a timer
+all you have to do is call imagerect to give you the frame index and let you know which frame should be displayed at the time
+TIMER IS ON THE MIDTERM: dual timer frame index calls timer frame index
+portal code:
+-- self.x, self.y = x, y // pythonic style
+maze creation code turns txt file into maze
+
+inkscape: group and ungroup to make big blocks out of little blocks
+
+use inkscape bezier tutorial for ghosts - simple tutorials
+
+maze file:
+
+self.bricks = [] -- obstacles in maze and barriers
+self.shields = [] -- the ghost house has a little shield in the middle pacman can't go into
+self.points = [] -- points hes trying to eat
+self.nodes = {} -- used for djikstra algorithm -> where ghost is going to make path decision -> put nodes at ALL decision points
+
+self.bricks = list() or self.bricks = [] --> same thing
+self.nodes = dict() or self.nodes = {} --> same thing
+
+self.build() --> builder design pattern
+
+initialize maze in game file -> self.maze = Maze(..., brickfile='square') --> where do I load this file?
+also with open(filename, r) as f --> means I don't have to close file because with open will automatically close for you
+imagerect file -> loads image plus sets parameters .left,.top,.image (by loads image what i mean is brickfile, and all of those)
+in maze file build --> v and h means portal going to wall feel free to pull those codes out so its easier to just pull portal on floor
+
+his files -> character, dijkstra, direction, eventloop, expandfile, game, ghost, imagerect, logger, maze, pacman, portal, portalportal, timer, vector
+
+logger file --> cls for pep8 should be self
+
+SET UP TRELLO ACCOUNT -> SEND PROFESSOR EMAIL WITH ACCOUNT --> PUBLIC ACCOUNT
+
+
+ghost:
+Each ghost goes to one different corner
+--> get dijkstra to find closest path for ghost ai
+use vector code to find (calculate) vector distances?
+if distance between target and me is getting smaller -> follow a path to get closer to target.
+start with only one ghost and no pacman to get each ghost working at a time.
+once ghost reaches location update target to pacman?
+
+vector class updated!!!
+
+
+
+3/6:
+- make program run, show maze, show animated/moving pacman and ghosts (ai - even if it doesn't
+chase anything), ghost actually tries to find pacman and eats it, pacman can eat power pill and
+kill ghosts
+
+you can slow down the game and can make key called go to next node in path to check if he got there to test if
+path find is working correctly - check if he's going from node to node to node...
+
+if you get done before deadline (HAHAHAHAHA GOOD ONE)... go to raywenderlich site and start
+unreal tutorials -> unreal engine tutorial for beginners -> DO PART ONE TUTORIAL BEFORE CLASS
+
+- ignore any ghost movement JUST focus on dijkstra
+-> scatter mode (set target in map text file?)
+find distance before you have to stop
